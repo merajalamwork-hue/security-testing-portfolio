@@ -96,6 +96,13 @@ https://github.com/user-attachments/assets/c47c7f0a-d453-4818-ae57-1bfefdb3db05
 - Transaction workflow testing  
 - Basic security checks  
 
+## 📈 Key Learnings
+
+- Importance of input validation in financial and user workflows  
+- How business logic flaws can impact real-world transactions  
+- Identifying workflow-breaking issues through exploratory testing  
+- Understanding the difference between functional bugs and security risks  
+- Writing clear and structured bug reports for better communication  
 ---
 
 ## ⚠️ Disclaimer

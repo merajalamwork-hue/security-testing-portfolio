@@ -7,7 +7,8 @@ I am a Manual Software Tester with experience in functional and basic security t
 
 ## 🧪 Applications Tested
 - VulnBank  
-- Mifos X Web App  
+- Mifos X Web App
+- Wordpress -playground
 
 ---
 
@@ -52,6 +53,40 @@ I am a Manual Software Tester with experience in functional and basic security t
 - **Impact:** Affects user experience  
 
 👉 https://gist.github.com/merajalamwork-hue/e1227b081556d61e8ca52bee4fa9912f
+
+### Wordpress-playground 
+
+## 🟠 Functional Bug – 404 Error After Creating New User
+
+### 📌 Description
+While creating a new user in the application, the system redirects to a "Page not found (404)" error instead of completing the workflow successfully.
+
+### 🔁 Steps to Reproduce
+1. Open WordPress Playground  
+2. Navigate to Users → Add New  
+3. Enter username and email  
+4. Click on "Create New User"  
+5. Observe the redirection
+   
+### ✅ Expected Result
+- User should be successfully created  
+- System should redirect to user list or confirmation page  
+
+### ❌ Actual Result
+- Application redirects to a **404 Page Not Found** screen  
+- Workflow breaks after submission  
+
+### 💥 Impact
+- User creation process is interrupted  
+- Affects core admin functionality  
+- Leads to poor user experience
+
+### 📸 Proof
+
+
+https://github.com/user-attachments/assets/c47c7f0a-d453-4818-ae57-1bfefdb3db05
+
+
 
 ---
 

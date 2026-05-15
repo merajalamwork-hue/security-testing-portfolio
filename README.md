@@ -1,19 +1,20 @@
-# 🔐 Security Testing Portfolio
+# 🧪 Manual Testing Portfolio
 
 ![Testing](https://img.shields.io/badge/Testing-Manual-blue)
 ![Type](https://img.shields.io/badge/Type-Security%20%26%20Functional-red)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Bugs Found](https://img.shields.io/badge/Bugs%20Found-5-critical)
+![Apps Tested](https://img.shields.io/badge/Apps%20Tested-3-informational)
 
-A portfolio of security and functional vulnerabilities discovered through manual exploratory testing on web applications.
+A structured portfolio of bugs discovered through manual exploratory testing across multiple web applications — covering security vulnerabilities, business logic flaws, and functional/UI issues.
 
-> **All testing was performed on authorized or intentionally vulnerable applications for educational purposes only.**
+> **All testing was performed on authorized or intentionally vulnerable applications for educational and portfolio purposes only.**
 
 ---
 
 ## 👨‍💻 About Me
 
-Manual Software Tester with hands-on experience in functional testing, input validation testing, and basic security testing. This repository documents real vulnerabilities I identified, reported, and tracked across multiple applications.
+Manual Software Tester with hands-on experience in functional testing, exploratory testing, input validation, and basic security testing. This repository documents real bugs I identified, analyzed, and reported across multiple applications.
 
 ---
 
@@ -22,8 +23,9 @@ Manual Software Tester with hands-on experience in functional testing, input val
 | Metric | Count |
 |--------|-------|
 | Applications Tested | 3 |
-| Security Vulnerabilities | 3 |
-| UI / Functional Bugs | 2 |
+| Total Bugs Found | 5 |
+| Security / Business Logic Bugs | 3 |
+| Functional / UI Bugs | 2 |
 | Critical / High Severity | 3 |
 | Medium Severity | 2 |
 
@@ -31,38 +33,58 @@ Manual Software Tester with hands-on experience in functional testing, input val
 
 ## 🧪 Applications Tested
 
-| Application | Type | Focus Area |
-|-------------|------|------------|
-| [VulnBank](https://github.com/Commando-X/vuln-bank) | Intentionally Vulnerable | Security & Business Logic |
+| Application | Type | Testing Focus |
+|-------------|------|---------------|
+| [VulnBank](https://github.com/Commando-X/vuln-bank) | Intentionally Vulnerable Banking App | Security & Business Logic |
 | [Mifos X Web App](https://mifos.org/) | Open Source Finance App | UI & Functional |
-| [WordPress Playground](https://playground.wordpress.net/) | Sandbox Environment | Functional & Workflow |
+| [WordPress Playground](https://playground.wordpress.net/) | Sandbox CMS Environment | Functional & Workflow |
 
 ---
 
-## 🚨 Vulnerabilities & Bugs Discovered
+## 📁 Repository Structure
+
+```
+Manual-Testing-Portfolio/
+├── README.md                          # This file — full summary
+├── security-testing/
+│   └── vulnbank_bugs.md               # Security & business logic bugs
+├── functional-testing/
+│   ├── mifos_bugs.md                  # UI bug — Mifos X
+│   └── wordpress_bugs.md             # Workflow bug — WordPress
+└── evidence/
+    └── *.mp4 / *.png                  # Screenshots and recordings
+```
 
 ---
 
-### 📁 VulnBank — Security Testing
+## 🔐 Security Testing — VulnBank
 
-#### 🔴 BUG-001 — Payment Process Bypasses Virtual Card Requirement
+> Business logic and input validation vulnerabilities found in an intentionally vulnerable banking application.
+
+---
+
+### 🔴 BUG-001 — Payment Process Bypasses Virtual Card Requirement
+
 | Field | Details |
 |-------|---------|
 | Severity | Critical |
 | Type | Business Logic Flaw |
+| Module | Bill Payment |
 | Impact | Unauthorized or invalid transactions possible |
 
-The bill payment flow allows users to complete payments without possessing a valid virtual card, bypassing a core financial control.
+The bill payment flow allows users to complete payments without possessing a valid virtual card, bypassing a core financial security control.
 
 👉 [View Full Issue Report](https://github.com/merajalamwork-hue/security-testing-portfolio/issues/1)
 
 ---
 
-#### 🔴 BUG-002 — Improper Validation of Recipient Account in Fund Transfer
+### 🔴 BUG-002 — Improper Validation of Recipient Account in Fund Transfer
+
 | Field | Details |
 |-------|---------|
 | Severity | High |
 | Type | Input Validation / Business Logic |
+| Module | Fund Transfer |
 | Impact | Transaction integrity compromised |
 
 The fund transfer module accepts invalid or non-existent recipient account details without any validation, allowing transactions to proceed to incorrect destinations.
@@ -71,11 +93,13 @@ The fund transfer module accepts invalid or non-existent recipient account detai
 
 ---
 
-#### 🔴 BUG-003 — Negative Loan Amount Accepted Due to Missing Input Validation
+### 🔴 BUG-003 — Negative Loan Amount Accepted Due to Missing Input Validation
+
 | Field | Details |
 |-------|---------|
 | Severity | High |
 | Type | Input Validation |
+| Module | Loan Application |
 | Impact | Financial and logical inconsistency |
 
 The loan amount input field accepts negative values with no server-side or client-side validation, creating a logical flaw that could be exploited to manipulate financial calculations.
@@ -84,13 +108,19 @@ The loan amount input field accepts negative values with no server-side or clien
 
 ---
 
-### 📁 Mifos X Web App — UI & Functional Testing
+## 🖥️ Functional & UI Testing
 
-#### 🟡 BUG-004 — Username Text Overlaps Account Icon on Login Page
+---
+
+### 📁 Mifos X Web App
+
+### 🟡 BUG-004 — Username Text Overlaps Account Icon on Login Page
+
 | Field | Details |
 |-------|---------|
 | Severity | Medium |
 | Type | UI Bug |
+| Module | Login Page |
 | Impact | Readability and user experience degraded |
 
 When a long username is entered in the login page input field, the text overlaps with the account icon inside the input box, making the field difficult to read and visually broken.
@@ -99,28 +129,29 @@ When a long username is entered in the login page input field, the text overlaps
 
 ---
 
-### 📁 WordPress Playground — Functional Testing
+### 📁 WordPress Playground
 
-#### 🟠 BUG-005 — 404 Error After Creating New User
+### 🟠 BUG-005 — 404 Error After Creating New User in Admin Panel
+
 | Field | Details |
 |-------|---------|
 | Severity | Medium |
 | Type | Functional / Workflow Bug |
+| Module | Admin Panel → User Management |
 | Impact | Core admin functionality broken |
 
 **Steps to Reproduce:**
 1. Open WordPress Playground
 2. Navigate to **Users → Add New**
-3. Enter a username and email address
-4. Click **Create New User**
+3. Enter a valid username and email address
+4. Click **"Create New User"**
 5. Observe the redirect
 
 **Expected:** User is created and system redirects to user list or confirmation page
 
-**Actual:** Application redirects to a **404 Page Not Found** screen, breaking the entire user creation workflow
+**Actual:** Application redirects to a **404 Page Not Found** screen, breaking the entire workflow with no success or failure feedback
 
-👉 Evidence: `https://github.com/user-attachments/assets/4f6088bf-f143-4ba6-a823-aa9019cf0fbb
-
+👉 Evidence: `Screen.Recording.2025-09-01.at.5.42.08.PM.1.mp4`
 
 ---
 
@@ -144,20 +175,7 @@ When a long username is entered in the login page input field, the text overlaps
 
 ---
 
-## 📁 Repository Structure
-
-```
-security-testing-portfolio/
-├── README.md                  # This file — all findings summarized
-└── evidence/                  # Screenshots and screen recordings
-    └── *.mp4 / *.png
-```
-
----
-
 ## 👤 Author
 
 **Meraj Alam**
 - GitHub: [@merajalamwork-hue](https://github.com/merajalamwork-hue)
-
-> ⚠️ **Disclaimer:** All testing was performed on intentionally vulnerable or authorized sandbox applications for educational and portfolio purposes only.

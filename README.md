@@ -119,7 +119,8 @@ When a long username is entered in the login page input field, the text overlaps
 
 **Actual:** Application redirects to a **404 Page Not Found** screen, breaking the entire user creation workflow
 
-👉 Evidence: `Screen.Recording.2025-09-01.at.5.42.08.PM.1.mp4`
+👉 Evidence: `https://github.com/user-attachments/assets/4f6088bf-f143-4ba6-a823-aa9019cf0fbb
+
 
 ---
 

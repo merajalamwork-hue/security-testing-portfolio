@@ -72,6 +72,18 @@ The "+ Add quick Link" text overlaps with the Plane AI description text, causing
 
 👉 **Reported Issue:** [makeplane/plane#9084](https://github.com/makeplane/plane/issues/9084)
 
+### ✨ ENHANCEMENT-001 — Popup Menu Border/Shadow 
+Visibility for Better UI Separation
+
+| Field | Details |
+|-------|---------|
+| Type | UX / Accessibility Enhancement |
+| WCAG | 1.4.11 Non-text Contrast |
+| Platform | Web — app.plane.so |
+| Status | Open — Assigned to maintainers |
+
+🔗 [View Issue #9095](https://github.com/makeplane/plane/issues/9095)
+
 ### Testing Techniques Applied
 - Responsive / Cross-platform Testing
 - Exploratory Testing

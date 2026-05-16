@@ -4,7 +4,7 @@
 ![Type](https://img.shields.io/badge/Type-Security%20%26%20Functional-red)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Bugs Found](https://img.shields.io/badge/Bugs%20Found-5-critical)
-![Apps Tested](https://img.shields.io/badge/Apps%20Tested-3-informational)
+![Apps Tested](https://img.shields.io/badge/Apps%20Tested-4-informational)
 
 A structured portfolio of bugs discovered through manual exploratory testing across multiple web applications — covering security vulnerabilities, business logic flaws, and functional/UI issues.
 
@@ -22,12 +22,12 @@ Manual Software Tester with hands-on experience in functional testing, explorato
 
 | Metric | Count |
 |--------|-------|
-| Applications Tested | 3 |
-| Total Bugs Found | 5 |
+| Applications Tested | 4 |
+| Total Bugs Found | 6 |
 | Security / Business Logic Bugs | 3 |
-| Functional / UI Bugs | 2 |
+| Functional / UI Bugs | 3 |
 | Critical / High Severity | 3 |
-| Medium Severity | 2 |
+| Medium Severity | 3 |
 
 ---
 
@@ -38,6 +38,8 @@ Manual Software Tester with hands-on experience in functional testing, explorato
 | [VulnBank](https://github.com/Commando-X/vuln-bank) | Intentionally Vulnerable Banking App | Security & Business Logic |
 | [Mifos X Web App](https://mifos.org/) | Open Source Finance App | UI & Functional |
 | [WordPress Playground](https://playground.wordpress.net/) | Sandbox CMS Environment | Functional & Workflow |
+| https://app.plane.so/ | Web Application (SaaS)| UI & Functional|
+
 
 ---
 
@@ -50,7 +52,8 @@ Manual-Testing-Portfolio/
 │   └── vulnbank_bugs.md               # Security & business logic bugs
 ├── functional-testing/
 │   ├── mifos_bugs.md                  # UI bug — Mifos X
-│   └── wordpress_bugs.md             # Workflow bug — WordPress
+│   ├── wordpress_bugs.md              # Workflow bug — WordPress
+│   └── plane_bugs.md                  # UI & workflow bugs — Plane.so
 └── evidence/
     └── *.mp4 / *.png                  # Screenshots and recordings
 ```
@@ -151,7 +154,41 @@ When a long username is entered in the login page input field, the text overlaps
 
 **Actual:** Application redirects to a **404 Page Not Found** screen, breaking the entire workflow with no success or failure feedback
 
-👉 Evidence: `Screen.Recording.2025-09-01.at.5.42.08.PM.1.mp4`
+👉 Evidence: https://github.com/user-attachments/assets/f685cf31-d0a3-443a-87e1-6fad8016788f
+
+### 🌐 Plane.so
+
+### 🟡 BUG-006 — "+ Add Quick Link" Text Overlaps Plane AI Text on Mobile Browser
+
+| Field | Details |
+|-------|---------|
+| Severity | Medium |
+| Type | UI / Layout Bug |
+| Module | Home Page → Quicklinks & Plane AI Section |
+| Impact | Visual confusion for all mobile users on first screen after login |
+
+**Steps to Reproduce:**
+1. Open Chrome browser on a mobile device
+2. Navigate to https://app.plane.so
+3. Sign in with your account
+4. Observe the Home page immediately after login
+5. Look at the area between the **Plane AI** section and the **Quicklinks** section
+
+**Expected:** "+ Add Quick Link" button and Plane AI text render in clearly separated sections
+
+**Actual:** The two UI elements visually overlap on mobile viewport, merging text from different sections
+
+| Mode | Behaviour |
+|------|-----------|
+| Desktop browser | ✅ No overlap — layout renders correctly |
+| Mobile Chrome | ❌ Overlap occurs — sections bleed into each other |
+
+**Environment:** Samsung Galaxy A22 4G · Android 13 · Chrome 148.0.7778.120
+
+🔗 [View Issue](https://github.com/makeplane/plane/issues/9084)
+
+---
+
 
 ---
 
